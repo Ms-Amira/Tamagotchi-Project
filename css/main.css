@@ -1,3 +1,5 @@
+ /* "." is for classes "#" is for id's */
+
 body {
     display: grid;
 }
@@ -16,4 +18,22 @@ h1 {
 #img {
     position: relative;
     left: 150px;
+}
+
+#container {
+    width: 500px;
+    height: 500px;
+    position: relative;
+}
+
+#pet {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    align-items: center;
+    animation-duration: 2s;
+    animation-iteration-count: 3;
+    background: url(https://mawges.com/res/games/catgotchi/icon512.png);
+    color: black;
 }
