@@ -18,11 +18,12 @@ const gigaAge = 0;
 const gigaPet = {
   sleepy: 0,
   hungry: 0,
-  bored: 0
+  bored: 0,
+  age: 0
 };
 
 function feedPet() {
-if (gigaPet.hungry < 50) {
+if (gigaPet.hungry < 5) {
   statements1
 } else {
   statements2
@@ -30,7 +31,7 @@ if (gigaPet.hungry < 50) {
 };
 
 function playPet() {
-  if (gigaPet.bored < 50) {
+  if (gigaPet.bored < 5) {
     statements1
   } else {
     statements2
@@ -38,32 +39,40 @@ function playPet() {
   };
 
   function sleepyPet() {
-    if (gigaPet.sleepy < 50) {
+    if (gigaPet.sleepy < 5) {
       statements1
     } else {
       statements2
     }
   };
-  
-  gigaPet.sleepy += 15
-  gigaPet.bored += 15
-  gigaPet.hungry += 15
+
+  function agePet() {
+    if (gigaPet.age < 5) {
+      statements1
+    } else {
+      statements2
+    }
+    };
+
+  gigaPet.sleepy += 1
+  gigaPet.bored += 1
+  gigaPet.hungry += 1
   
   
   /*----- event listeners -----*/
   // adding the clicks to feed, play with and bed the pet
 addEventListener('click', function() {
-  gigaPet.sleepy += 15;
+  gigaPet.sleepy += 1;
   gigaPet();
 });
 
  addEventListener('click', function() {
-  gigaPet.hungry += 15;
+  gigaPet.hungry += 1;
   gigaAge();
 });
 
 addEventListener('click', function() {
-  gigaPet.bored += 15;
+  gigaPet.bored += 1;
   gigaPet();
 });
 
@@ -80,22 +89,22 @@ addEventListener('click', function() {
 
 
 
-function animation() {
-  let id = null;
-  const elem = document.getElementById("animate");   
-  let pos = 0;
-  clearInterval(id);
-  id = setInterval(frame, 5);
-  function frame() {
-    if (pos == 350) {
-      clearInterval(id);
-    } else {
-      pos++; 
-      elem.style.top = pos + "px"; 
-      elem.style.left = pos + "px"; 
-    }
-  }
-}
+// function animation() {
+//   let id = null;
+//   const elem = document.getElementById("animate");   
+//   let pos = 0;
+//   clearInterval(id);
+//   id = setInterval(frame, 5);
+//   function frame() {
+//     if (pos == 350) {
+//       clearInterval(id);
+//     } else {
+//       pos++; 
+//       elem.style.top = pos + "px"; 
+//       elem.style.left = pos + "px"; 
+//     }
+//   }
+// }
 
 
 
