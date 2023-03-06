@@ -37,3 +37,40 @@ h1 {
     background: url(https://mawges.com/res/games/catgotchi/icon512.png);
     color: black;
 }
+
+
+  #foodProgress {
+    width: 10%;
+    height: 20px;
+    background-color: grey;
+  }
+  
+  #foodBar {
+    width: 100%;
+    height: 20px;
+    background-color: green;
+  }
+
+  #boredProgress {
+    width: 10%;
+    height: 20px;
+    background-color: grey;
+  }
+  
+  #boredBar {
+    width: 100%;
+    height: 20px;
+    background-color: green;
+  }
+
+  #sleepProgress {
+    width: 10%;
+    height: 20px;
+    background-color: grey;
+  }
+  
+  #sleepBar {
+    width: 100%;
+    height: 20px;
+    background-color: green;
+  }
