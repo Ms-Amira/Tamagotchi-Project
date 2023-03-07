@@ -102,33 +102,60 @@ const sleepInterval = setInterval(() => {
     const alertSleepyEl = document.querySelector(".alert")
     alertSleepyEl.innerHTML = '<b>Your pet is now a zombie.</b>'
     console.log(alertSleepyEl)
-    clearInterval(sleepInterval)
+    intervalStop()
   }else {
     sleepEl.innerText = gigaPet.sleepy -= 1
   }}, 3000)
   
-  
+  // using foodInterval variable to set an interval
   const foodInterval = setInterval(() => {
+    // grabbing my object gigaPet and the key hungry to compare it to
+    // zero
     if (gigaPet.hungry === 0) {
+      // using alertFoodEl to store the alert in the element by using
+      // querySelector to select the div with a class of alert
     const alertFoodEl = document.querySelector(".alert")
+    // updating the property from the html file to change the
+    // property within the div tag
     alertFoodEl.innerHTML = '<b>Your pet has died of hunger.</b>'
+    // checking to see if the alert was store correctly
     console.log(alertFoodEl)
-      clearInterval(foodInterval)
+    // clearing all of the foodInterval/playInterval/sleepInterval
+    //function so that it stops the interval function from running
+     intervalStop()
+// if gigaPet.hungry doesn't equal zero then we decrement the hunger
+// key by one and updating the text within the #foodBar div by one
   } else {
     foodEl.innerText = gigaPet.hungry -= 1
   }}, 3000)
   
+  // using playInterval variable to set an interval
 const playInterval = setInterval(() => {
+  // grabbing my object gigaPet and the key bored to compare it to zero
 if (gigaPet.bored === 0) {
+  // using alertBoredEl to store the alert in the element by using
+  // query selector to select the alert class
   const alertBoredEl = document.querySelector(".alert")
+  // grabbing the tag from the html file to update the alert message
   alertBoredEl.innerHTML = '<b>Your pet was bored and ran away.</b>'
+  // checking to see if the alert was stored correctly
   console.log(alertBoredEl)
-  clearInterval(playInterval)
+  // clearing the playInterval function so that it stops the interval
+  //function from running
+  intervalStop()
+  // if gigaPet.bored doesn't equal zero then we decrement the bored key
+  // by one and updating the text within the #boredBar div by one
 } else {
   playEl.innerText =  gigaPet.bored -= 1
 }
 }, 3000)
 
+const intervalStop = function() {
+  clearInterval(foodInterval)
+  clearInterval(playInterval)
+  clearInterval(sleepInterval)
+  clearInterval(ageInterval)
+}
 
 // set another interval for the age of the pet
 // x amount of seconds the pet increases in age

@@ -114,10 +114,9 @@ border-radius: 5px;
 
   #age {
     position: absolute;
-    top: 470px;
-    left: 510px;
-    z-index: auto;
-    outline-style: solid;
+    top: 460px;
+    left: 505px;
+    z-index: 4;
   }
 
   .alert {
@@ -126,4 +125,17 @@ border-radius: 5px;
     top: 200px;
     left: 590px;
    font-size: 50px;
+   
+  } 
+
+  #cake {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 450px;
+    left: 490px;
+    z-index: 1;
+    opacity: 0.5;
+    background-color: rgb(47, 132, 108);
+    background: url(https://upload.wikimedia.org/wikipedia/commons/5/50/ASCII_cake.jpg);
   }
