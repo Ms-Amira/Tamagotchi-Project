@@ -3,8 +3,6 @@ console.log('GigaPet')
 // "." is for classes "#" is for id's 
 // seleciting an element id doesn't need a #
 
-// ask alexis about styling and adding my listeners to create functinos
-// for the pet.
 
 // Creating a class for my Gigapet
 // class gigaPet {
@@ -23,38 +21,6 @@ const gigaPet = {
   age: 0,
   name: ''
 };
-
-// function feedPet() {
-//   if (gigaPet.hungry === 0) {
-//     statements1
-//   } else {
-//     statements2
-//   }
-// };
-
-// function playPet() {
-//   if (gigaPet.bored < 5) {
-//     statements1
-//   } else {
-//     statements2
-//   }
-// };
-
-// function sleepyPet() {
-//   if (gigaPet.sleepy < 5) {
-//     statements1
-//   } else {
-//     statements2
-//   }
-// };
-
-// function agePet() {
-//   if (gigaPet.age < 5) {
-//     statements1
-//   } else {
-//     statements2
-//   }
-// };
 
 // selecting the food div and storing in the foodEl variable
 //inside of the food button function
