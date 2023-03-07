@@ -114,7 +114,16 @@ border-radius: 5px;
 
   #age {
     position: absolute;
-    top: 550px;
-    left: 900px;
+    top: 470px;
+    left: 510px;
+    z-index: auto;
     outline-style: solid;
+  }
+
+  .alert {
+    position: absolute;
+    text-align: center;
+    top: 200px;
+    left: 590px;
+   font-size: 50px;
   }

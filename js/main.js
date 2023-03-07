@@ -4,9 +4,7 @@ console.log('GigaPet')
 // seleciting an element id doesn't need a #
 
 // ask alexis about styling and adding my listeners to create functinos
-// for the pet. I also need help with creating a message in html
-// when the progress bars hit zero. I also need to fix the progress
-// bars so they move as decrementing
+// for the pet.
 
 // Creating a class for my Gigapet
 // class gigaPet {
@@ -65,7 +63,7 @@ const sleepEl = document.querySelector('#sleepBar')
 console.log(sleepEl)
 
 const buttonElSleep = document.querySelector('#sleep').addEventListener('click', function() {
-  gigaPet.sleepy = (Number(gigaPet.sleepy) +.1).toFixed(1)
+  gigaPet.sleepy = (Number(gigaPet.sleepy) +1).toFixed(1)
   console.log(gigaPet)
   // connecting the sleepEl variable to my gigaPet object and accessing
   // the sleepy property
@@ -77,7 +75,7 @@ const foodEl = document.querySelector('#foodBar')
 console.log(foodEl)
 
 const buttonElFood = document.querySelector('#food').addEventListener('click', function() {
-  gigaPet.hungry = (Number(gigaPet.hungry) +.1).toFixed(1)
+  gigaPet.hungry = (Number(gigaPet.hungry) +1).toFixed(1)
   console.log(typeof(gigaPet.hungry))
   foodEl.innerText = gigaPet.hungry;
 });
@@ -86,7 +84,7 @@ const playEl = document.querySelector('#boredBar')
 console.log(playEl)
 
 const buttonElPlay = document.querySelector('#play').addEventListener('click', function() {
-  gigaPet.bored = (Number(gigaPet.bored) +.1).toFixed(1)
+  gigaPet.bored = (Number(gigaPet.bored) +1).toFixed(1)
   console.log(gigaPet)
   playEl.innerText = gigaPet.bored;
 });
@@ -101,25 +99,33 @@ const sleepInterval = setInterval(() => {
   // then update the DOM with the value, (Very similiar to what you did with the button)
 
   if (gigaPet.sleepy === 0) {
+    const alertSleepyEl = document.querySelector(".alert")
+    alertSleepyEl.innerHTML = '<b>Your pet is now a zombie.</b>'
+    console.log(alertSleepyEl)
     clearInterval(sleepInterval)
   }else {
-    sleepEl.innerText = gigaPet.sleepy
+    sleepEl.innerText = gigaPet.sleepy -= 1
   }}, 3000)
   
   
   const foodInterval = setInterval(() => {
     if (gigaPet.hungry === 0) {
+    const alertFoodEl = document.querySelector(".alert")
+    alertFoodEl.innerHTML = '<b>Your pet has died of hunger.</b>'
+    console.log(alertFoodEl)
       clearInterval(foodInterval)
   } else {
-    foodEl.innerText = gigaPet.hungry
+    foodEl.innerText = gigaPet.hungry -= 1
   }}, 3000)
-  
   
 const playInterval = setInterval(() => {
 if (gigaPet.bored === 0) {
+  const alertBoredEl = document.querySelector(".alert")
+  alertBoredEl.innerHTML = '<b>Your pet was bored and ran away.</b>'
+  console.log(alertBoredEl)
   clearInterval(playInterval)
 } else {
-  playEl.innerText =  gigaPet.bored
+  playEl.innerText =  gigaPet.bored -= 1
 }
 }, 3000)
 
@@ -132,62 +138,60 @@ const ageInterval = setInterval(() => {
   ageEl.innerText =  gigaPet.age += 1
   console.log(ageInterval)
   }, 3000)
+
+//Add the ability to name your pet
+//Morph your pet at certain ages
+
   
+// function updateSleep() {
+//   const element = document.getElementById("sleepBar");   
+//   let width = gigaPet.sleepy *10
+//   let identity = setInterval(scene, 3000);
+//   function scene() {
+//     if (gigaPet.sleepy <= 0) {
+//       clearInterval(identity);
+//     } else {
+//     gigaPet.sleepy = (gigaPet.sleepy -.1).toFixed(1);
+//     width = gigaPet.sleepy *10
+//       element.style.width = width + '%'; 
+//       console.log(gigaPet.sleepy)
+//     }
+//   }
+// }
 
-  // const alertEL = document.getElementById('alert').addEventListener('click', function() {
-   
-  // });
-  
-  
-function updateSleep() {
-  const element = document.getElementById("sleepBar");   
-  let width = gigaPet.sleepy *10
-  let identity = setInterval(scene, 3000);
-  function scene() {
-    if (gigaPet.sleepy <= 0) {
-      clearInterval(identity);
-    } else {
-    gigaPet.sleepy = (gigaPet.sleepy -.1).toFixed(1);
-    width = gigaPet.sleepy *10
-      element.style.width = width + '%'; 
-      console.log(gigaPet.sleepy)
-    }
-  }
-}
+// updateSleep()
 
-updateSleep()
+// function updateFood() {
+//   const element = document.getElementById("foodBar");   
+//   let width = gigaPet.hungry *10;
+//   let identity = setInterval(scene, 3000);
+//   function scene() {
+//     if (gigaPet.hungry <= 0) {
+//       clearInterval(identity);
+//     } else {
+//       gigaPet.hungry = (gigaPet.hungry -.1).toFixed(1); 
+//       width = gigaPet.hungry *10
+//       element.style.width = width + '%'; 
+//     }
+//   }
+// }
+// updateFood()
 
-function updateFood() {
-  const element = document.getElementById("foodBar");   
-  let width = gigaPet.hungry *10;
-  let identity = setInterval(scene, 3000);
-  function scene() {
-    if (gigaPet.hungry <= 0) {
-      clearInterval(identity);
-    } else {
-      gigaPet.hungry = (gigaPet.hungry -.1).toFixed(1); 
-      width = gigaPet.hungry *10
-      element.style.width = width + '%'; 
-    }
-  }
-}
-updateFood()
-
-function updateBored() {
-  const element = document.getElementById("boredBar");   
-  let width = gigaPet.bored *10;
-  let identity = setInterval(scene, 3000);
-  function scene() {
-    if (gigaPet.bored <= 0) {
-      clearInterval(identity);
-    } else {
-      gigaPet.bored = (gigaPet.bored -.1).toFixed(1);
-      width = gigaPet.bored *10
-      element.style.width = width + '%'; 
-    }
-  }
-}
-updateBored()
+// function updateBored() {
+//   const element = document.getElementById("boredBar");   
+//   let width = gigaPet.bored *10;
+//   let identity = setInterval(scene, 0);
+//   function scene() {
+//     if (gigaPet.bored <= 0) {
+//       clearInterval(identity);
+//     } else {
+//       gigaPet.bored = (gigaPet.bored -.1).toFixed(1);
+//       width = gigaPet.bored *10
+//       element.style.width = width + '%'; 
+//     }
+//   }
+// }
+// updateBored()
     
   
       
