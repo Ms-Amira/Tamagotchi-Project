@@ -1,62 +1,62 @@
 console.log('GigaPet')
 
 // "." is for classes "#" is for id's 
+// seleciting an element id doesn't need a #
 
+// ask alexis about styling and adding my listeners to create functinos
+// for the pet. I also need help with creating a message in html
+// when the progress bars hit zero. I also need to fix the progress
+// bars so they move as decrementing
 
 // Creating a class for my Gigapet
-const tamagotchi = document.createElement('div')
-tamagotchi.className = 'giga'
-document.body.appendChild(tamagotchi)
-
-// variables for name and age
-const gigaName = '';
-const gigaAge = 0;
+// class gigaPet {
+  //     constructor(bored, hungry, sleepy) {
+    //       this.bored = bored;
+    //       this.hungry = hungry;
+    //       this.sleepy = sleepy;
+    //     }
 
 // update whether the pet is hungry, bored, sleepy
 // either feed, play with or put to bed
 const gigaPet = {
-  sleepy: 0,
-  hungry: 0,
-  bored: 0,
-  age: 0
+  sleepy: 10,
+  hungry: 10,
+  bored: 10,
+  age: 0,
+  name: ''
 };
 
-function feedPet() {
-  if (gigaPet.hungry === 0) {
-    statements1
-  } else {
-    statements2
-  }
-};
+// function feedPet() {
+//   if (gigaPet.hungry === 0) {
+//     statements1
+//   } else {
+//     statements2
+//   }
+// };
 
-function playPet() {
-  if (gigaPet.bored < 5) {
-    statements1
-  } else {
-    statements2
-  }
-};
+// function playPet() {
+//   if (gigaPet.bored < 5) {
+//     statements1
+//   } else {
+//     statements2
+//   }
+// };
 
-function sleepyPet() {
-  if (gigaPet.sleepy < 5) {
-    statements1
-  } else {
-    statements2
-  }
-};
+// function sleepyPet() {
+//   if (gigaPet.sleepy < 5) {
+//     statements1
+//   } else {
+//     statements2
+//   }
+// };
 
-function agePet() {
-  if (gigaPet.age < 5) {
-    statements1
-  } else {
-    statements2
-  }
-};
-
-gigaPet.sleepy += 1
-gigaPet.bored += 1
-gigaPet.hungry += 1
-
+// function agePet() {
+//   if (gigaPet.age < 5) {
+//     statements1
+//   } else {
+//     statements2
+//   }
+// };
 
 // selecting the food div and storing in the foodEl variable
 //inside of the food button function
@@ -65,7 +65,7 @@ const sleepEl = document.querySelector('#sleepBar')
 console.log(sleepEl)
 
 const buttonElSleep = document.querySelector('#sleep').addEventListener('click', function() {
-  gigaPet.sleepy += 1;
+  gigaPet.sleepy = (Number(gigaPet.sleepy) +.1).toFixed(1)
   console.log(gigaPet)
   // connecting the sleepEl variable to my gigaPet object and accessing
   // the sleepy property
@@ -77,8 +77,8 @@ const foodEl = document.querySelector('#foodBar')
 console.log(foodEl)
 
 const buttonElFood = document.querySelector('#food').addEventListener('click', function() {
-  gigaPet.hungry += 1
-  console.log(gigaPet)
+  gigaPet.hungry = (Number(gigaPet.hungry) +.1).toFixed(1)
+  console.log(typeof(gigaPet.hungry))
   foodEl.innerText = gigaPet.hungry;
 });
 
@@ -86,84 +86,110 @@ const playEl = document.querySelector('#boredBar')
 console.log(playEl)
 
 const buttonElPlay = document.querySelector('#play').addEventListener('click', function() {
-  gigaPet.bored += 1;
+  gigaPet.bored = (Number(gigaPet.bored) +.1).toFixed(1)
   console.log(gigaPet)
   playEl.innerText = gigaPet.bored;
 });
 
 
+// decreasing the food, sleep and hunger of the pet by setting an
+//interval every x amount of seconds
+// a message will pop up if the pet powerbar hits zero
+
 const sleepInterval = setInterval(() => {
   // decrease your sleep value in your gigaPet object
   // then update the DOM with the value, (Very similiar to what you did with the button)
-  sleepEl.innerText = gigaPet.sleepy - 1
-  // console.log(sleepInterval)
-}, 3000)
 
-
-const foodInterval = setInterval(() => {
-  foodEl.innerText = gigaPet.hungry - 1
-  // console.log(foodInterval)
-}, 3000)
-
-
+  if (gigaPet.sleepy === 0) {
+    clearInterval(sleepInterval)
+  }else {
+    sleepEl.innerText = gigaPet.sleepy
+  }}, 3000)
+  
+  
+  const foodInterval = setInterval(() => {
+    if (gigaPet.hungry === 0) {
+      clearInterval(foodInterval)
+  } else {
+    foodEl.innerText = gigaPet.hungry
+  }}, 3000)
+  
+  
 const playInterval = setInterval(() => {
-  playEl.innerText = gigaPet.bored - 1
-  // console.log(playInterval)
+if (gigaPet.bored === 0) {
+  clearInterval(playInterval)
+} else {
+  playEl.innerText =  gigaPet.bored
+}
 }, 3000)
 
 
+// set another interval for the age of the pet
+// x amount of seconds the pet increases in age
+const ageEl = document.querySelector('#age')
+console.log(ageEl)
+const ageInterval = setInterval(() => {
+  ageEl.innerText =  gigaPet.age += 1
+  console.log(ageInterval)
+  }, 3000)
+  
+
+  // const alertEL = document.getElementById('alert').addEventListener('click', function() {
+   
+  // });
+  
+  
 function updateSleep() {
-  const element = document.getElementById("#sleepBar");   
-  let width = 0;
-  let identity = setInterval(scene, 10);
+  const element = document.getElementById("sleepBar");   
+  let width = gigaPet.sleepy *10
+  let identity = setInterval(scene, 3000);
   function scene() {
-    if (width >= 100) {
+    if (gigaPet.sleepy <= 0) {
       clearInterval(identity);
     } else {
-      width++; 
+    gigaPet.sleepy = (gigaPet.sleepy -.1).toFixed(1);
+    width = gigaPet.sleepy *10
       element.style.width = width + '%'; 
+      console.log(gigaPet.sleepy)
     }
   }
 }
+
+updateSleep()
 
 function updateFood() {
-  const element = document.getElementById("#foodBar");   
-  let width = 0;
-  let identity = setInterval(scene, 10);
+  const element = document.getElementById("foodBar");   
+  let width = gigaPet.hungry *10;
+  let identity = setInterval(scene, 3000);
   function scene() {
-    if (width >= 100) {
+    if (gigaPet.hungry <= 0) {
       clearInterval(identity);
     } else {
-      width++; 
+      gigaPet.hungry = (gigaPet.hungry -.1).toFixed(1); 
+      width = gigaPet.hungry *10
       element.style.width = width + '%'; 
     }
   }
 }
+updateFood()
 
 function updateBored() {
-  const element = document.getElementById("#boredBar");   
-  let width = 0;
-  let identity = setInterval(scene, 10);
+  const element = document.getElementById("boredBar");   
+  let width = gigaPet.bored *10;
+  let identity = setInterval(scene, 3000);
   function scene() {
-    if (width >= 100) {
+    if (gigaPet.bored <= 0) {
       clearInterval(identity);
     } else {
-      width++; 
+      gigaPet.bored = (gigaPet.bored -.1).toFixed(1);
+      width = gigaPet.bored *10
       element.style.width = width + '%'; 
     }
   }
 }
-
-// class gigaPet {
-  //     constructor(bored, hungry, sleepy) {
-    //       this.bored = bored;
-    //       this.hungry = hungry;
-    //       this.sleepy = sleepy;
-    //     }
+updateBored()
     
-    //   eat() {
-      //     this.isHungry = false
-      //   }
+  
       
       
       
@@ -172,56 +198,10 @@ function updateBored() {
       
       
       
-      
-      
-      //Iterating between adding HTML, CSS & JS is one approach.
-      // Start with some markup for the basic layout of the UI.
-      // Declare, but don't initialize, the application-wide variables (state). The initialization of the variables to their "start-up" state should be done within an initialize, or similarly named function, i.e., init, reset, etc.
-      // Write that initialize function.
-      // Invoke initialize() to "kick off" the app.
-      // Next stub up a render function. Be sure to call render after state has been updated in event handlers, the initialize function, etc.
-      // Register event listeners - browser apps are typically event-driven.
-      // If you have user stories, code them in a logical order.
-      // More recommendations for interactive browser app's, such as games
-      
-      // Create a main render function that is responsible for rendering the state of the app to the DOM.
-      // If the render function becomes lengthy, add additional rendering oriented functions, for example:
-      // function render() {
-        // 	renderHands();
-        // 	renderControls();
-        // 	if (winner) {
-          // 		renderWinnerMessage();
-          // 	} else {
-            // 		renderTurnMessage();
-            // 	}
-            // }
-            // Avoid accessing the DOM from outside render-oriented functions. However, "eye candy" animations, a ticking time display, etc. are exceptions to this tip.
-            // Data (state) is the single source of truth of the app - when implementing an app's logic, the DOM is secondary to data manipulation. Get used to thinking about how to your app's data changes vs. the display.
-            // As the user interacts with the application (or other events such as timers trigger), code the app such that it:
-            // Updates state, then...
-            // Calls render()
             
             
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+          
             
             
             /*----- state variables -----*/
@@ -233,4 +213,3 @@ function updateBored() {
             /*----- functions -----*/
             
             /*----- event listeners -----*/
-            

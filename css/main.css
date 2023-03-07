@@ -10,37 +10,68 @@ h1 {
     font-size: 80px;
 
 }
-#button {
-    grid-column-gap: 20px;
+#food {
+position: absolute;
+top: 635px;
+left: 340px;
+width: 50px;
+height: 20px;
+border-radius: 5px;
+}
 
+#play {
+  position: absolute;
+top: 650px;
+left: 410px;
+width: 50px;
+height: 20px;
+border-radius: 5px;
+}
+
+#sleep {
+position: absolute;
+top: 635px;
+left: 470px;
+width: 50px;
+height: 20px;
+border-radius: 5px;
 }
 
 #img {
     position: relative;
+    /* display: block;
+    margin-left: auto;
+    margin-right: auto; */
     left: 150px;
 }
 
-#container {
+/* #container {
     width: 500px;
     height: 500px;
     position: relative;
-}
+} */
 
 #pet {
     position: absolute;
-    width: 500px;
-    height: 500px;
+    top: 390px;
+    left: 330px;
+    width: 205px;
+    height: 190px;
     margin: auto;
-    align-items: center;
-    animation-duration: 2s;
-    animation-iteration-count: 3;
+    /* animation-duration: 2s;
+    animation-iteration-count: 3; */
     background: url(https://mawges.com/res/games/catgotchi/icon512.png);
     color: black;
+    background-size: 205px 205px;
+    border-radius: 15px;
 }
 
 
   #foodProgress {
-    width: 10%;
+    position: absolute;
+    top: 395px;
+    left: 335px;
+    width: 35.25px;
     height: 20px;
     background-color: grey;
   }
@@ -48,11 +79,14 @@ h1 {
   #foodBar {
     width: 100%;
     height: 20px;
-    background-color: green;
+    background-color:deepskyblue;
   }
 
   #boredProgress {
-    width: 10%;
+    position: absolute;
+    top: 553px;
+    left: 335px;
+    width: 35.25px;
     height: 20px;
     background-color: grey;
   }
@@ -60,11 +94,14 @@ h1 {
   #boredBar {
     width: 100%;
     height: 20px;
-    background-color: green;
+    background-color: deepskyblue;
   }
 
   #sleepProgress {
-    width: 10%;
+    position: absolute;
+    top: 395px;
+    left: 490px;
+    width: 35.25px;
     height: 20px;
     background-color: grey;
   }
@@ -72,5 +109,12 @@ h1 {
   #sleepBar {
     width: 100%;
     height: 20px;
-    background-color: green;
+    background-color: deepskyblue;
+  }
+
+  #age {
+    position: absolute;
+    top: 550px;
+    left: 900px;
+    outline-style: solid;
   }
