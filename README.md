@@ -8,6 +8,6 @@ I would also like some custimization like naming the pet and celebrating birthda
 
 I used html for my tags, css for decorating and JS for functionality.
 
-I plan on acutally animate the pet.
+I plan on acutally animating the pet.
 
 
