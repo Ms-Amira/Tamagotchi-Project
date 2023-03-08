@@ -1,4 +1,4 @@
- /* "." is for classes "#" is for id's */
+
 
 body {
     display: grid;
@@ -45,11 +45,6 @@ border-radius: 5px;
     left: 150px;
 }
 
-/* #container {
-    width: 500px;
-    height: 500px;
-    position: relative;
-} */
 
 #pet {
     position: absolute;
@@ -58,8 +53,6 @@ border-radius: 5px;
     width: 205px;
     height: 190px;
     margin: auto;
-    /* animation-duration: 2s;
-    animation-iteration-count: 3; */
     background: url(https://mawges.com/res/games/catgotchi/icon512.png);
     color: black;
     background-size: 205px 205px;

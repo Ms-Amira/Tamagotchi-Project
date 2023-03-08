@@ -1,19 +1,6 @@
 console.log('GigaPet')
 
-// "." is for classes "#" is for id's 
-// seleciting an element id doesn't need a #
-
-
-// Creating a class for my Gigapet
-// class gigaPet {
-  //     constructor(bored, hungry, sleepy) {
-    //       this.bored = bored;
-    //       this.hungry = hungry;
-    //       this.sleepy = sleepy;
-    //     }
-
-// update whether the pet is hungry, bored, sleepy
-// either feed, play with or put to bed
+// create an object to reference within the game
 const gigaPet = {
   sleepy: 10,
   hungry: 10,
@@ -22,61 +9,87 @@ const gigaPet = {
   name: ''
 };
 
-// selecting the food div and storing in the foodEl variable
-//inside of the food button function
-// creating the variable to store the div id #foodBar in
+/*----- event listeners -----*/
+/*----- functions -----*/
+/*----- constants -----*/ 
+
+
+// Connecting the buttons to the progress bar div's
+
+// creating the sleepEl variable to store the div id #sleepBar in
 const sleepEl = document.querySelector('#sleepBar')
 console.log(sleepEl)
-
+// using querySelector to select the #sleep button and adding a click
+//event listener to the button
 const buttonElSleep = document.querySelector('#sleep').addEventListener('click', function() {
-  gigaPet.sleepy = (Number(gigaPet.sleepy) +1).toFixed(1)
+ // selecting the sleepy key within the gigaPet object and increasing 
+//  the progress bar by one after you click the sleep button
+  gigaPet.sleepy = (Number(gigaPet.sleepy) +1)
   console.log(gigaPet)
   // connecting the sleepEl variable to my gigaPet object and accessing
   // the sleepy property
   sleepEl.innerText = gigaPet.sleepy;
 });
 
-
+// creating the foodEl variable to store the div #foodBar in
 const foodEl = document.querySelector('#foodBar')
 console.log(foodEl)
-
+// using querySelector to select the #food button and adding a click
+// event listener to the button
 const buttonElFood = document.querySelector('#food').addEventListener('click', function() {
-  gigaPet.hungry = (Number(gigaPet.hungry) +1).toFixed(1)
-  console.log(typeof(gigaPet.hungry))
+ //selecting the hungry key within the gigaPet object and increasing
+ // the progress bar by one after you click the food button
+  gigaPet.hungry = (Number(gigaPet.hungry) +1)
+  console.log(gigaPet)
+  // connecting the foodEl variable to my gigaPet object and accessing
+  // the hungry key
   foodEl.innerText = gigaPet.hungry;
 });
 
+// creating the playEl variable to store the div #boredBar in
 const playEl = document.querySelector('#boredBar')
 console.log(playEl)
 
 const buttonElPlay = document.querySelector('#play').addEventListener('click', function() {
-  gigaPet.bored = (Number(gigaPet.bored) +1).toFixed(1)
+  // selecting the bored key within the gigaPet object and increasing
+  // the progress bar by onea after you click the play button
+  gigaPet.bored = (Number(gigaPet.bored) +1)
   console.log(gigaPet)
+  // connecting the playEl variable to my gigaPet object and accessing
+  // the bored key
   playEl.innerText = gigaPet.bored;
 });
 
 
-// decreasing the food, sleep and hunger of the pet by setting an
-//interval every x amount of seconds
+// Decreasing the food, sleep and hunger of the pet by setting an
+//interval every 3 seconds
 // a message will pop up if the pet powerbar hits zero
 
+// using sleepInterval variable to set an interval
 const sleepInterval = setInterval(() => {
-  // decrease your sleep value in your gigaPet object
-  // then update the DOM with the value, (Very similiar to what you did with the button)
-
+  //grabbing my object gigaPet and the key sleepy to compare it to zero
   if (gigaPet.sleepy === 0) {
+    // using alertSleepyEl to store the alert in the element by using
+    // querySelector to select the dib with a class of alert
     const alertSleepyEl = document.querySelector(".alert")
+    // updating the property from the html file to change the property
+    // within the div tag
     alertSleepyEl.innerHTML = '<b>Your pet is now a zombie.</b>'
+    //checking to see if the alert was stored correctly
     console.log(alertSleepyEl)
+    //clearing all of the foodInterval/playInterval/sleepInterval
+    // function so that it stops the interval function from running
     intervalStop()
-  }else {
+    // if gigaPet.sleepy doesn't equal zero then we decrement the bored
+    // key by one and updating the text within the #sleepbar div by one
+  } else {
     sleepEl.innerText = gigaPet.sleepy -= 1
   }}, 3000)
   
+
   // using foodInterval variable to set an interval
   const foodInterval = setInterval(() => {
-    // grabbing my object gigaPet and the key hungry to compare it to
-    // zero
+    // grabbing my object gigaPet and the key hungry to compare it to zero
     if (gigaPet.hungry === 0) {
       // using alertFoodEl to store the alert in the element by using
       // querySelector to select the div with a class of alert
@@ -116,23 +129,31 @@ if (gigaPet.bored === 0) {
 }
 }, 3000)
 
+// using querySelector to select the #age div id and storing it in
+// theageEl 
+const ageEl = document.querySelector('#age')
+console.log(ageEl)
+// using ageInterval to set an interval
+const ageInterval = setInterval(() => {
+  // taking the age key within the gigaPet object and increasing it by one
+  // every 3 seconds
+  ageEl.innerText =  gigaPet.age += 1
+  console.log(ageInterval)
+  }, 3000)
+
+  // Ending the game if one of the three functions ever hits zero
+
+// using the intervalStop function to stop the setInterval from repeating
+// for foodInterval/playInterval/sleepInterval/ageInterval
 const intervalStop = function() {
   clearInterval(foodInterval)
   clearInterval(playInterval)
   clearInterval(sleepInterval)
   clearInterval(ageInterval)
-}
-
-// set another interval for the age of the pet
-// x amount of seconds the pet increases in age
-const ageEl = document.querySelector('#age')
-console.log(ageEl)
-const ageInterval = setInterval(() => {
-  ageEl.innerText =  gigaPet.age += 1
-  console.log(ageInterval)
-  }, 3000)
+};
 
 //Add the ability to name your pet
+
 // selecting the the name id tag and storing it within the nameEl 
 const nameEl = document.getElementById('name');
 // adding the click listener to the nameYourPet div id
@@ -197,27 +218,4 @@ function nameYourPet() {
 // }
 // updateBored()
     
-  
-      
-      
-      
-      
-      
-      
-      
-      
-            
-            
-            
-          
-            
-            
-            /*----- state variables -----*/
-            
-            /*----- cached elements  -----*/
-          
-            /*----- constants -----*/ 
-            
-            /*----- functions -----*/
-            
-            /*----- event listeners -----*/
+   
