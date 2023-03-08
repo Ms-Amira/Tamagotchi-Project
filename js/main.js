@@ -155,17 +155,17 @@ const intervalStop = function() {
 //Add the ability to name your pet
 
 // selecting the the name id tag and storing it within the nameEl 
-const nameEl = document.getElementById('name');
-// adding the click listener to the nameYourPet div id
-nameEl.addEventListener('click', nameYourPet);
-// making a function that will select the input tag 
-function nameYourPet() { 
-  // store it within inputEl
-  const inputEl = document.querySelector('input')
-  // clearing the value of the name input
-  inputEl.value = '';
-  console.log(inputEl.value)
-}
+// const nameEl = document.getElementById('name');
+// // adding the click listener to the nameYourPet div id
+// nameEl.addEventListener('click', nameYourPet);
+// // making a function that will select the input tag 
+// function nameYourPet() { 
+//   // store it within inputEl
+//   const inputEl = document.querySelector('input')
+//   // clearing the value of the name input
+//   inputEl.value = '';
+//   console.log(inputEl.value)
+// }
 
   
 // function updateSleep() {
