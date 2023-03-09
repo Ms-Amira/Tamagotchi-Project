@@ -1,4 +1,4 @@
-console.log('GigaPet')
+console.log('GigaPet is loaded')
 
 // create an object to reference within the game
 const gigaPet = {
