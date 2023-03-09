@@ -24,6 +24,10 @@ https://ms-amira.github.io/Tamagotchi-Project/
 
 ![Alt text](https://i.imgur.com/AwLyyGA.png)
 
+
+![Alt text](https://i.imgur.com/X6A1zM6.png)
+
+
 ## Technologies Used
 * I used html for my tags, css for decorating and JS for functionality.
 
