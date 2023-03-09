@@ -9,7 +9,7 @@ I'd like to turn off the lights to signify bedtime.
 I would also like some custimization like naming the pet and celebrating birthdays.
 
 ## Screenshots
-Screenshot 2023-03-09 at 11.43.38 AM.png
+/Users/Mimi/code/Gigapet/Screenshot 2023-03-09 at 11.43.38 AM.png
 Screenshot 2023-03-09 at 11.45.08 AM.png
 Screenshot 2023-03-09 at 11.44.16 AM.png
 
