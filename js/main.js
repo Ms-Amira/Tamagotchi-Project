@@ -6,12 +6,7 @@ const gigaPet = {
   hungry: 10,
   bored: 10,
   age: 0,
-  name: ''
 };
-
-/*----- event listeners -----*/
-/*----- functions -----*/
-/*----- constants -----*/ 
 
 
 // Connecting the buttons to the progress bar div's
