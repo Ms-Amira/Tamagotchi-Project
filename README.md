@@ -29,7 +29,7 @@ https://ms-amira.github.io/Tamagotchi-Project/
 
 
 ## Technologies Used
-* I used html for my tags, css for decorating and JS for functionality.
+* I used HTML for my tags, CSS for decorating and JS for functionality.
 
 ## Next Steps
 * I plan on animating the pet and having the animation filter through the growth cycle of the pet.
